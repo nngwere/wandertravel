@@ -138,6 +138,8 @@
             </div>
             <div class="content">
                 <h3>Tour Packages</h3>
+                <p>Pre-planned travel itineraries covering multiple destinations
+                <br>Includes sightseeing, transportation, and activities which can be customized based on your preferences.  <p> 
                    
             </div>
         </div>
@@ -152,6 +154,8 @@
             </div>
             <div class="content">
                 <h3>Visa and Travel Documentation </h3>
+                <p> Guides customers in obtaining visas and passports.
+                <br>Helps with application forms, documentation, and appointments.</p>
                 
             </div>
         </div>
@@ -166,6 +170,9 @@
             </div>
             <div class="content">
                 <h3>Flight Bookings</h3>
+                <p> Helps customers find and book domestic or international flights.
+                <br>Offers comparisons of different airlines, prices, and schedules.</p>
+                
                 
             </div>
         </div>
@@ -195,7 +202,9 @@
                 </div>
             </div>
             <div class="content">
-                <h3>Transportation Services</h3>
+                <h3>Car Rentals & Transportation</h3>
+                <p>Arranges rental cars, private transfers, or chauffeur services.
+                <br>Coordinates airport pick-ups and drop-offs.<p>
                 
             </div>
         </div>
@@ -210,6 +219,8 @@
             </div>
             <div class="content">
                 <h3>Travel Insurance</h3>
+                <p> Provides protection against trip cancellations
+                <br>Medical emergencies, lost baggage, and accidents.</p>
                 
             </div>
         </div>
@@ -225,6 +236,8 @@
             </div>
             <div class="content">
                 <h3> Corporate and Business Travel</h3>
+                <p> Manages travel for companies, including flights, hotels, and conferences.
+                <br>Ensures cost efficiency and smooth logistics.</p>
                 
             </div>
         </div>
@@ -239,6 +252,8 @@
             </div>
             <div class="content">
                 <h3>Cruise Bookings</h3>
+                <p> Assists in booking cruises to various destinations.
+                <br>Includes onboard activities, excursions, and entertainment options.</p>
                 
             </div>
         </div>
@@ -367,11 +382,11 @@
             <i class="fas fa-star"></i>
             <i class="fas fa-star"></i>
         </div>
-        <p>Europe is a landmass located entirely in the Northern Hemisphere and mostly in the Eastern Hemisphere.</p>
+        <p>"Our trip was absolutely perfect, thanks to this amazing Wander travel agency! They handled everything seamlessly, from flights to hotel bookings and even customized excursions. The itinerary was well-planned, and we never had to worry about a thing. Highly recommended for stress-free and enjoyable travel!".</p>
         <div class="user">
             <img src="images/pic-1.jpg" alt="">
             <div class="user-info">
-                <h3>Niru</h3>
+                <h3>George</h3>
                 <span>happy customer</span>
             </div>
         </div>
@@ -386,11 +401,11 @@
             <i class="fas fa-star"></i>
             <i class="fas fa-star"></i>
         </div>
-        <p>Europe is a landmass located entirely in the Northern Hemisphere and mostly in the Eastern Hemisphere.</p>
+        <p>"I can’t thank this agency enough for planning our dream vacation. The customer service was outstanding, and they took the time to understand our preferences and budget. Every recommendation they made was spot on, and we had the best time exploring new places without any hassle. Will definitely book with them again!".</p>
         <div class="user">
-            <img src="images/pic-2.png" alt="">
+            <img src="images/home page.jpg" alt="">
             <div class="user-info">
-                <h3>Niru</h3>
+                <h3>Takudzwa</h3>
                 <span>happy customer</span>
             </div>
         </div>
@@ -405,11 +420,11 @@
             <i class="fas fa-star"></i>
             <i class="fas fa-star"></i>
         </div>
-        <p>Europe is a landmass located entirely in the Northern Hemisphere and mostly in the Eastern Hemisphere.</p>
+        <p>"This was our first time using a travel agency, and we were blown away by the professionalism and efficiency. From visa assistance to booking the perfect hotel, everything was handled flawlessly. Our trip was smooth, and we got great deals on tours. A 10/10 experience—we’ll be back for our next adventure!".</p>
         <div class="user">
             <img src="images/pic-3.jpg" alt="">
             <div class="user-info">
-                <h3>Niru</h3>
+                <h3>Trish</h3>
                 <span>happy customer</span>
             </div>
         </div>
@@ -430,17 +445,16 @@
 
     <div class="row">
 
-        <form action="">
-            <input type="text" placeholder="name" class="box">
-            <input type="email" placeholder="email" class="box">
-            <input type="number" placeholder="number" class="box">
-            <textarea name="" class="box" placeholder="message" id="" cols="30" rows="10"></textarea>
-            <input type="submit" value="send message" class="btn">
+        <form id="myForm">
+            <input type="text" name="name" placeholder="Name" class="box" autocomplete="name" required>
+            <input type="email" name="email" placeholder="Email" class="box" autocomplete="email" required>
+            <input type="tel" name="number" placeholder="Phone Number" class="box" autocomplete="tel" required>
+            <textarea name="message" placeholder="Message" class="box" cols="30" rows="10" autocomplete="off" required></textarea>
+            <input type="submit" value="Send Message" class="btn">
         </form>
-
-        <div class="image">
-            <img src="images/contact-img.svg" alt="">
-        </div>
+    
+        <!-- Correct Script Path -->
+        <script src="js/form-handler.js"></script>
 
     </div>
 
@@ -449,34 +463,66 @@
 <!-- contact section ends -->
 
 <!-- footer section starts  -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        /* Floating WhatsApp Icon */
+        .floating-whatsapp {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            z-index: 1000;
+        }
+        .floating-whatsapp a {
+            display: block;
+            background-color: #25D366; /* WhatsApp green */
+            color: white;
+            padding: 15px;
+            border-radius: 50%;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            text-align: center;
+            text-decoration: none;
+        }
+        .floating-whatsapp a:hover {
+            background-color: #128C7E; /* Darker green on hover */
+        }
 
+        /* Footer Social Icons */
+        .footer .social-icons {
+            text-align: center;
+            margin-top: 20px;
+        }
+        .footer .social-icons a {
+            color: #333; /* Icon color */
+            margin: 0 10px;
+            font-size: 24px;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        .footer .social-icons a:hover {
+            color: #25D366; /* WhatsApp green on hover */
+        }
+    </style>
+</head>
+<body>
+
+<!-- Floating WhatsApp Icon -->
+<div class="floating-whatsapp">
+    <a href="https://wa.me/+27849762719" target="_blank">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+</div>
+
+<!-- Footer Section -->
 <section class="footer">
-
     <div class="box-container">
-
-        <div class="box">
-            <h3>quick links</h3>
-            <a href="#">Home</a>
-            <a href="#">About</a>
-            <a href="#">Places</a>
-            <a href="#">Review</a>
-            <a href="#">Contact Us</a>
-        </div>
-
-        <div class="box">
-            <h3>extra links</h3>
-            <a href="#">My account</a>
-            <a href="#">My List</a>
-            <a href="#">My favorite</a>
-        </div>
-
-        <div class="box">
-            <h3>Other Tracel Locations</h3>
-            <a href="#">India & Sri Lanka</a>
-            <a href="#">USA</a>
-            <a href="#">Japan</a>
-            <a href="#">Canda</a>
-        </div>
+        
 
         <div class="box">
             <h3>contact info</h3>
@@ -485,23 +531,20 @@
             <a href="https://www.codechef.com/users/gniruthian">Code Chef</a>
             <img src="images/payment.png" alt="">
         </div>
+    </div>
 
-        <div class="box">
-            <h3>Europe Tracel Locations</h3>
-            <a href="#">Netherlands</a>
-            <a href="#">Switzerland</a>
-            <a href="#">f\France</a>
-            <a href="#">Finland</a>
-            <a href="#">UK</a>
-        </div>
-
+    <!-- Social Icons in Footer -->
+    <div class="social-icons">
+        <a href="https://web.facebook.com/profile.php?id=61567729715447" target="_blank"><i class="fab fa-facebook"></i></a>
+        <a href="https://instagram.com/yourpage" target="_blank"><i class="fab fa-instagram"></i></a>
     </div>
 
     <div class="credit">| created by <span> N.Ngwere </span> | all rights reserved |</div>
-
 </section>
 
 <!-- footer section ends -->
 
+
 </body>
 </html>
+
