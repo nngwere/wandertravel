@@ -40,10 +40,22 @@
 
     window.addEventListener('scroll', highlightNav, { passive: true });
 
-    // ── Close mobile nav on link click ─────────────────────────
-    const toggler = document.getElementById('toggler');
+    // ── Mobile nav toggle (class-based) ────────────────────────────
+    const toggler      = document.getElementById('toggler');
+    const hamburgerBtn = document.querySelector('.hamburger-label');
+
+    if (hamburgerBtn) {
+        hamburgerBtn.addEventListener('click', () => {
+            header.classList.toggle('nav-open');
+            // keep the hidden checkbox in sync (accessibility)
+            if (toggler) toggler.checked = header.classList.contains('nav-open');
+        });
+    }
+
+    // Close mobile nav on link click
     navLinks.forEach(link => {
         link.addEventListener('click', () => {
+            header.classList.remove('nav-open');
             if (toggler) toggler.checked = false;
         });
     });
