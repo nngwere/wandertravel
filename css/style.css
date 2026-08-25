@@ -1,25 +1,45 @@
 /* ============================================================
    WANDER TRAVEL AGENCY — Premium Design System
-   Color Palette: Deep Navy + Warm Gold
+   Color Palette: Forest Green + White  (brand colours)
+   Accent: Soft Amber | Neutrals: Sage, Warm Cream
    Fonts: Playfair Display (headings) + Inter (body)
    ============================================================ */
 
 :root {
-    --navy:        #0A1628;
-    --navy-mid:    #112240;
-    --navy-light:  #1D3461;
-    --gold:        #D4A843;
-    --gold-light:  #F0C04A;
-    --gold-pale:   #FFF8E7;
-    --cream:       #F8F5F0;
-    --white:       #FFFFFF;
-    --text-dark:   #1A1A2E;
-    --text-mid:    #4A5568;
-    --text-light:  #8A9BB5;
-    --shadow-sm:   0 2px 8px rgba(10, 22, 40, 0.08);
-    --shadow-md:   0 8px 32px rgba(10, 22, 40, 0.12);
-    --shadow-lg:   0 20px 60px rgba(10, 22, 40, 0.18);
-    --shadow-gold: 0 8px 32px rgba(212, 168, 67, 0.30);
+    /* ── PRIMARY BRAND COLOURS ── */
+    --green:        #1B6B3A;   /* deep forest green  */
+    --green-mid:    #228B4E;   /* vivid emerald      */
+    --green-light:  #3AAD6B;   /* bright leaf green  */
+    --green-pale:   #E8F5EE;   /* whisper green tint */
+    --white:        #FFFFFF;   /* pure white         */
+
+    /* ── COMPLEMENTARY & NEUTRALS ── */
+    --sage:         #7BAF8E;   /* muted sage green   */
+    --cream:        #F5FAF7;   /* warm off-white     */
+    --amber:        #E8A838;   /* warm amber accent  */
+    --amber-light:  #F5C96A;   /* soft amber glow    */
+    --amber-pale:   #FFF8EC;   /* amber tint bg      */
+
+    /* ── TEXT ── */
+    --text-dark:    #142B1E;   /* deep green-black   */
+    --text-mid:     #3D6652;   /* muted forest text  */
+    --text-light:   #7BAF8E;   /* sage text          */
+
+    /* ── LEGACY ALIASES (keep existing rules working) ── */
+    --navy:         var(--green);
+    --navy-mid:     var(--green-mid);
+    --navy-light:   var(--green-light);
+    --gold:         var(--amber);
+    --gold-light:   var(--amber-light);
+    --gold-pale:    var(--amber-pale);
+
+    /* ── SHADOWS ── */
+    --shadow-sm:    0 2px 8px  rgba(27, 107, 58, 0.08);
+    --shadow-md:    0 8px 32px rgba(27, 107, 58, 0.14);
+    --shadow-lg:    0 20px 60px rgba(27, 107, 58, 0.20);
+    --shadow-gold:  0 8px 32px rgba(232, 168, 56, 0.30);
+
+    /* ── SHAPE & MOTION ── */
     --radius-sm:   8px;
     --radius-md:   16px;
     --radius-lg:   24px;
@@ -52,6 +72,8 @@ body {
     background-color: var(--cream);
     color: var(--text-dark);
     line-height: 1.6;
+    /* brand accent visible on scrollbar in supporting browsers */
+    scrollbar-color: var(--green-light) var(--green-pale);
 }
 
 h1, h2, h3, h4 {
