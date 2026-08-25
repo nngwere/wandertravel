@@ -1236,6 +1236,35 @@ footer {
 }
 
 /* ============================================================
+   RESPONSIVE — LARGE TABLET / SMALL LAPTOP (≤ 1200px)
+   ============================================================ */
+
+@media (max-width: 1200px) {
+    html { font-size: 58%; }
+
+    section { padding: 7rem 6%; }
+
+    header { padding: 1.8rem 6%; }
+    header.scrolled { padding: 1.4rem 6%; }
+
+    .home { padding: 0 6%; }
+    .home .hero-content h1 { font-size: 6rem; }
+
+    .services-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .places-grid {
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: repeat(2, 26rem);
+    }
+
+    .footer-grid {
+        gap: 3.5rem;
+    }
+}
+
+/* ============================================================
    RESPONSIVE — TABLET (≤ 991px)
    ============================================================ */
 
@@ -1247,27 +1276,54 @@ footer {
     header { padding: 1.8rem 5%; }
     header.scrolled { padding: 1.4rem 5%; }
 
+    /* Logo shrinks slightly on tablet */
+    .logo-img { height: 6rem; }
+
     .home { padding: 0 5%; }
     .home .hero-content h1 { font-size: 5.5rem; }
+    .home .hero-content p  { font-size: 1.7rem; }
 
+    /* Hero stats — wrap into 2 columns */
+    .hero-stats .stat { flex: 1 1 50%; }
+
+    /* About: stack video above text */
+    .about .row {
+        flex-direction: column;
+        gap: 3.5rem;
+    }
+    .about .row .video-container { width: 100%; flex: none; }
+    .about .row .content { flex: none; width: 100%; }
+
+    /* Features bar: 2 columns */
+    .features-bar { padding: 4rem 5%; }
+    .feature-card { flex: 1 1 42%; }
+
+    /* Services: 2 columns */
+    .services-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    /* Places: 2-column masonry */
     .places-grid {
         grid-template-columns: repeat(2, 1fr);
         grid-template-rows: auto;
     }
-
     .place-card.featured {
         grid-column: span 2;
         grid-row: span 1;
         height: 28rem;
     }
+    .place-card { height: 24rem; }
 
+    /* Reviews: 2 columns */
+    .review-card { flex: 1 1 44%; }
+
+    /* Footer */
     .footer-grid {
         grid-template-columns: 1fr 1fr;
+        gap: 3rem;
     }
-
-    .footer-brand {
-        grid-column: span 2;
-    }
+    .footer-brand { grid-column: span 2; }
 }
 
 /* ============================================================
@@ -1275,24 +1331,32 @@ footer {
    ============================================================ */
 
 @media (max-width: 768px) {
-    /* Show hamburger */
-    .hamburger-label {
-        display: flex;
-    }
+    html { font-size: 53%; }
 
-    /* Mobile nav */
+    /* ── Header & Nav ── */
+    header { padding: 1.6rem 4%; }
+    header.scrolled { padding: 1.2rem 4%; }
+
+    .logo-img { height: 5.2rem; }
+
+    /* Show hamburger */
+    .hamburger-label { display: flex; }
+
+    /* Mobile nav drawer */
     .navbar {
         position: absolute;
         top: 100%;
         left: 0; right: 0;
         flex-direction: column;
-        background: rgba(10, 22, 40, 0.98);
+        background: rgba(27, 107, 58, 0.97);
         backdrop-filter: blur(20px);
-        padding: 2rem;
-        gap: 0.6rem;
-        border-top: 1px solid rgba(212, 168, 67, 0.15);
+        -webkit-backdrop-filter: blur(20px);
+        padding: 2rem 4%;
+        gap: 0.5rem;
+        border-top: 1px solid rgba(255,255,255,0.12);
         clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
         transition: clip-path 0.4s ease;
+        z-index: 999;
     }
 
     #toggler:checked ~ .navbar {
@@ -1302,60 +1366,93 @@ footer {
     .navbar a {
         display: block;
         text-align: center;
-        padding: 1.2rem;
+        padding: 1.4rem;
         border-radius: var(--radius-sm);
-        font-size: 1.6rem;
-        border: 1px solid rgba(255,255,255,0.06);
+        font-size: 1.7rem;
+        border: 1px solid rgba(255,255,255,0.1);
+        color: var(--white);
     }
 
-    .nav-cta {
-        margin-left: 0 !important;
-    }
+    .nav-cta { margin-left: 0 !important; }
 
-    /* Hero */
+    /* ── Hero ── */
+    section.home { padding: 0 4%; }
+    .home .hero-content { max-width: 100%; }
     .home .hero-content h1 { font-size: 4.2rem; }
-    .home .hero-content p  { font-size: 1.6rem; }
+    .home .hero-content p  { font-size: 1.6rem; max-width: 100%; }
 
-    .hero-stats {
-        flex-wrap: wrap;
+    .hero-badge { font-size: 1.1rem; padding: 0.6rem 1.4rem; }
+
+    .hero-actions {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 1.2rem;
     }
+    .hero-actions .btn { width: 100%; justify-content: center; }
 
+    /* Hero stats: 2 per row */
+    .hero-stats { flex-wrap: wrap; }
     .hero-stats .stat {
         flex: 1 1 50%;
+        padding: 1.6rem 0.8rem;
+    }
+    .hero-stats .stat .num { font-size: 2.4rem; }
+    .hero-stats .stat .label { font-size: 1.1rem; }
+
+    /* ── Features bar ── */
+    .features-bar { padding: 3.5rem 4%; }
+    .features-bar .features-grid { gap: 1.5rem; }
+    .feature-card { flex: 1 1 100%; padding: 2.2rem 2rem; }
+
+    /* ── About ── */
+    .about .row { flex-direction: column; gap: 3rem; }
+    .about .row .video-container { width: 100%; flex: none; }
+    .about .row .video-container video { height: 26rem; }
+    .about .row .content { flex: none; width: 100%; }
+    .about .row .content h2 { font-size: 3.2rem; }
+
+    /* ── Services ── */
+    .services-grid {
+        grid-template-columns: 1fr;
     }
 
-    /* About */
-    .about .row { gap: 3rem; }
-    .about .row .video-container video { height: 30rem; }
-
-    /* Places */
+    /* ── Places ── */
     .places-grid {
         grid-template-columns: 1fr;
         grid-template-rows: auto;
     }
-
     .place-card,
     .place-card.featured {
         grid-column: auto;
         height: 26rem;
     }
 
-    /* Footer */
+    /* ── Reviews ── */
+    .review-grid { flex-direction: column; }
+    .review-card { flex: none; width: 100%; padding: 2.8rem 2.4rem; }
+
+    /* ── Contact ── */
+    .contact .contact-inner { padding: 3rem 2rem; }
+
+    /* ── Footer ── */
     .footer-grid {
         grid-template-columns: 1fr;
+        gap: 2.5rem;
     }
-
     .footer-brand { grid-column: auto; }
-
     .footer-bottom {
         flex-direction: column;
         text-align: center;
+        gap: 0.8rem;
     }
 
-    /* Contact */
-    .contact .contact-inner {
-        padding: 3rem 2rem;
-    }
+    /* ── WhatsApp button ── */
+    .floating-whatsapp { bottom: 2rem; right: 1.8rem; }
+    .floating-whatsapp a { width: 5rem; height: 5rem; font-size: 2.2rem; }
+
+    /* ── Section headings ── */
+    .section-heading h2 { font-size: 3.4rem; }
+    .section-heading p  { font-size: 1.55rem; }
 }
 
 /* ============================================================
@@ -1365,13 +1462,62 @@ footer {
 @media (max-width: 480px) {
     html { font-size: 50%; }
 
-    .section-heading h2 { font-size: 3.2rem; }
-    .home .hero-content h1 { font-size: 3.6rem; }
+    header { padding: 1.4rem 3.5%; }
+    .logo-img { height: 4.6rem; }
 
-    .hero-actions {
-        flex-direction: column;
-        align-items: flex-start;
-    }
+    section { padding: 5rem 3.5%; }
+    section.home { padding: 0 3.5%; }
+
+    .section-heading h2 { font-size: 3rem; }
+    .section-heading p  { font-size: 1.5rem; }
+
+    .home .hero-content h1 { font-size: 3.4rem; }
+    .home .hero-content p  { font-size: 1.5rem; }
+    .hero-badge { display: none; } /* hide on tiny screens for breathing room */
+
+    .hero-stats .stat .num   { font-size: 2.2rem; }
+    .hero-stats .stat .label { font-size: 1rem; letter-spacing: 0; }
+
+    /* Features: icon + text row still works, just tighter */
+    .feature-card { padding: 1.8rem 1.6rem; gap: 1.4rem; }
+    .feature-card .fc-icon { width: 4.8rem; height: 4.8rem; font-size: 1.9rem; }
+
+    .about .row .video-container video { height: 22rem; }
+    .about .row .content h2 { font-size: 3rem; }
+
+    /* Services cards: full width, shorter image */
+    .service-card .card-image { height: 18rem; }
+
+    .place-card,
+    .place-card.featured { height: 22rem; }
+
+    .review-card { padding: 2.4rem 1.8rem; }
+
+    .contact .contact-inner { padding: 2.5rem 1.6rem; }
 
     .btn { width: 100%; justify-content: center; }
+
+    .floating-whatsapp { bottom: 1.6rem; right: 1.4rem; }
+    .floating-whatsapp a { width: 4.6rem; height: 4.6rem; font-size: 2rem; }
+}
+
+/* ============================================================
+   RESPONSIVE — EXTRA-SMALL (≤ 360px)
+   ============================================================ */
+
+@media (max-width: 360px) {
+    html { font-size: 46%; }
+
+    .logo-img { height: 4rem; }
+
+    .home .hero-content h1 { font-size: 3rem; }
+
+    .hero-stats .stat { flex: 1 1 100%; border-right: none; border-bottom: 1px solid rgba(255,255,255,0.1); }
+    .hero-stats .stat:last-child { border-bottom: none; }
+
+    .section-heading h2 { font-size: 2.8rem; }
+
+    .feature-card { flex-direction: column; align-items: flex-start; }
+
+    .navbar a { font-size: 1.6rem; padding: 1.2rem; }
 }
