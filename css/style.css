@@ -1387,12 +1387,12 @@ footer {
 
     .nav-cta { margin-left: 0 !important; }
 
-    /* ── Hero: push content below fixed header ── */
+    /* ── Hero: full title visible below header, shorter height ── */
     section.home {
-        min-height: 100svh;
-        padding: 8rem 4% 18rem;
+        min-height: 85svh;
+        padding: 14rem 4% 18rem;
         align-items: flex-start;
-        justify-content: flex-start; /* content starts from top, no vertical centering */
+        justify-content: flex-start;
         background-position: center bottom;
     }
     /* Force all reveal elements visible on mobile — no JS dependency */
@@ -1403,12 +1403,10 @@ footer {
     .home .hero-content {
         max-width: 100%;
         width: 100%;
-        padding-top: 2rem; /* extra breathing room below header */
     }
-    .home .hero-content h1 { font-size: 3.4rem; line-height: 1.12; }
-    .home .hero-content p  { font-size: 1.5rem; max-width: 100%; margin-bottom: 2.4rem; }
-
-    .hero-badge { font-size: 1.05rem; padding: 0.5rem 1.2rem; margin-bottom: 1.4rem; }
+    .hero-badge { display: none; } /* hide badge to save space on mobile */
+    .home .hero-content h1 { font-size: 3.2rem; line-height: 1.15; margin-bottom: 1.2rem; }
+    .home .hero-content p  { font-size: 1.5rem; max-width: 100%; margin-bottom: 2.2rem; }
 
     .hero-actions {
         flex-direction: column;
