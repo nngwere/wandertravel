@@ -1390,9 +1390,11 @@ footer {
     /* ── Hero: compact, centered, not excessively tall ── */
     section.home {
         min-height: 100svh;       /* use small viewport height on mobile */
-        padding: 10rem 4% 14rem; /* top: clear header | bottom: clear stats bar */
+        padding: 10rem 4% 4rem;  /* top: clear header */
         align-items: flex-start;
         justify-content: center;
+        background-position: center bottom; /* show brighter bottom of image */
+        flex-direction: column;
     }
     .home .hero-content {
         max-width: 100%;
@@ -1410,10 +1412,19 @@ footer {
     }
     .hero-actions .btn { width: 100%; justify-content: center; }
 
-    /* Hero stats: 2×2 grid — compact */
+    /* Hero stats: 2×2 grid — sits below buttons inside hero */
     .hero-stats {
+        position: relative;  /* flow inside hero, not pinned to bottom */
+        bottom: auto;
+        left: auto;
+        right: auto;
         display: grid;
         grid-template-columns: 1fr 1fr;
+        width: 100%;
+        margin-top: 3.2rem;
+        border-top: 1px solid rgba(255,255,255,0.15);
+        border-radius: var(--radius-md);
+        overflow: hidden;
     }
     .hero-stats .stat {
         flex: none;
@@ -1425,10 +1436,28 @@ footer {
     .hero-stats .stat .num   { font-size: 2.4rem; }
     .hero-stats .stat .label { font-size: 1.05rem; }
 
-    /* ── Features bar ── */
-    .features-bar { padding: 3rem 4%; }
-    .features-bar .features-grid { gap: 1.2rem; }
-    .feature-card { flex: 1 1 100%; padding: 2rem 1.8rem; }
+    /* ── Features bar: 2×2 compact grid ── */
+    .features-bar { padding: 2.4rem 4%; }
+    .features-bar .features-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 1rem;
+    }
+    .feature-card {
+        flex: none;
+        padding: 1.6rem 1.2rem;
+        gap: 1rem;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .feature-card .fc-icon {
+        width: 4rem;
+        height: 4rem;
+        min-width: 4rem;
+        font-size: 1.7rem;
+    }
+    .feature-card .fc-text h4 { font-size: 1.35rem; }
+    .feature-card .fc-text span { font-size: 1.15rem; }
 
     /* ── About ── */
     .about .row { flex-direction: column; gap: 3rem; }
@@ -1441,6 +1470,10 @@ footer {
     .services-grid {
         grid-template-columns: repeat(2, 1fr);
         gap: 1.4rem;
+    }
+    /* last card fills full row if odd count */
+    .services-grid .service-card:last-child:nth-child(odd) {
+        grid-column: 1 / -1;
     }
     .service-card .card-image { height: 15rem; }
     .service-card .card-body { padding: 1.6rem; }
@@ -1465,22 +1498,41 @@ footer {
         grid-template-columns: repeat(2, 1fr);
         gap: 1.4rem;
     }
+    /* last review card fills full row if odd count */
+    .review-grid .review-card:last-child:nth-child(odd) {
+        grid-column: 1 / -1;
+    }
     .review-card { flex: none; width: 100%; padding: 2.4rem 2rem; }
 
     /* ── Contact ── */
     .contact .contact-inner { padding: 3rem 2rem; }
 
-    /* ── Footer ── */
+    /* ── Footer: brand full-width, then 2 cols ── */
     .footer-grid {
-        grid-template-columns: 1fr;
-        gap: 2.5rem;
+        grid-template-columns: 1fr 1fr;
+        gap: 0 2rem;
+        row-gap: 2.4rem;
     }
-    .footer-brand { grid-column: auto; }
+    .footer-brand {
+        grid-column: 1 / -1;  /* spans both columns */
+        padding-bottom: 2rem;
+        border-bottom: 1px solid rgba(255,255,255,0.08);
+        margin-bottom: 0.4rem;
+    }
+    .footer-brand p { font-size: 1.3rem; margin-bottom: 1.6rem; max-width: 100%; }
+    .footer-logo-img { height: 5.5rem; }
+    .social-links a { width: 3.6rem; height: 3.6rem; font-size: 1.5rem; }
+    .footer-col h4 { font-size: 1.2rem; margin-bottom: 1.2rem; }
+    .footer-col a,
+    .footer-col p { font-size: 1.25rem; padding: 0.4rem 0; gap: 0.6rem; }
+    .footer-col a i,
+    .footer-col p i { font-size: 1.1rem; }
     .footer-bottom {
         flex-direction: column;
         text-align: center;
-        gap: 0.8rem;
+        gap: 0.6rem;
     }
+    .footer-bottom p { font-size: 1.2rem; }
 
     /* ── WhatsApp button ── */
     .floating-whatsapp { bottom: 2rem; right: 1.8rem; }
@@ -1514,9 +1566,9 @@ footer {
     .hero-stats .stat .num   { font-size: 2.2rem; }
     .hero-stats .stat .label { font-size: 1rem; letter-spacing: 0; }
 
-    /* Features: icon + text row still works, just tighter */
-    .feature-card { padding: 1.8rem 1.6rem; gap: 1.4rem; }
-    .feature-card .fc-icon { width: 4.8rem; height: 4.8rem; font-size: 1.9rem; }
+    /* Features: keep 2-column grid, tighter spacing */
+    .feature-card { padding: 1.4rem 1rem; gap: 0.8rem; }
+    .feature-card .fc-icon { width: 3.6rem; height: 3.6rem; min-width: 3.6rem; font-size: 1.5rem; }
 
     .about .row .video-container video { height: 22rem; }
     .about .row .content h2 { font-size: 3rem; }
