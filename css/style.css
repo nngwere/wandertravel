@@ -1389,12 +1389,11 @@ footer {
 
     /* ── Hero: compact, centered, not excessively tall ── */
     section.home {
-        min-height: 100svh;       /* use small viewport height on mobile */
-        padding: 10rem 4% 4rem;  /* top: clear header */
+        min-height: 100svh;
+        padding: 10rem 4% 18rem; /* extra bottom padding to clear the stats bar */
         align-items: flex-start;
         justify-content: center;
         background-position: center bottom; /* show brighter bottom of image */
-        flex-direction: column;
     }
     .home .hero-content {
         max-width: 100%;
@@ -1412,19 +1411,14 @@ footer {
     }
     .hero-actions .btn { width: 100%; justify-content: center; }
 
-    /* Hero stats: 2×2 grid — sits below buttons inside hero */
+    /* Hero stats: 2×2 grid — pinned to bottom of hero */
     .hero-stats {
-        position: relative;  /* flow inside hero, not pinned to bottom */
-        bottom: auto;
-        left: auto;
-        right: auto;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
         display: grid;
         grid-template-columns: 1fr 1fr;
-        width: 100%;
-        margin-top: 3.2rem;
-        border-top: 1px solid rgba(255,255,255,0.15);
-        border-radius: var(--radius-md);
-        overflow: hidden;
     }
     .hero-stats .stat {
         flex: none;
