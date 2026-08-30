@@ -1393,7 +1393,13 @@ footer {
         padding: 10rem 4% 18rem; /* extra bottom padding to clear the stats bar */
         align-items: flex-start;
         justify-content: center;
-        background-position: center bottom; /* show brighter bottom of image */
+        background-position: center bottom;
+    }
+
+    /* Force all reveal elements visible on mobile — no JS dependency */
+    .reveal, .reveal-left, .reveal-right {
+        opacity: 1 !important;
+        transform: none !important;
     }
     .home .hero-content {
         max-width: 100%;
