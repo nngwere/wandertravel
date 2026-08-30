@@ -1387,12 +1387,12 @@ footer {
 
     .nav-cta { margin-left: 0 !important; }
 
-    /* ── Hero: full title visible below header, shorter height ── */
+    /* ── Hero: content centered in image area ── */
     section.home {
         min-height: 85svh;
-        padding: 14rem 4% 18rem;
-        align-items: flex-start;
-        justify-content: flex-start;
+        padding: 8rem 4% 18rem;
+        align-items: center;
+        justify-content: center;
         background-position: center bottom;
     }
     /* Force all reveal elements visible on mobile — no JS dependency */
@@ -1552,7 +1552,7 @@ footer {
     .logo-img { height: 4.6rem; }
 
     section { padding: 5rem 3.5%; }
-    section.home { padding: 0 3.5%; }
+    section.home { padding: 8rem 3.5% 18rem; } /* keep top+bottom padding for hero */
 
     .section-heading h2 { font-size: 3rem; }
     .section-heading p  { font-size: 1.5rem; }
